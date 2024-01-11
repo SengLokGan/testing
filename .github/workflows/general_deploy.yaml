@@ -1,0 +1,76 @@
+name: "General deploy V2"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["develop", "develop-v1", "release/*"]
+
+env:
+  REPOSITORY_NAME: "revo-frontend"
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  setup_variables:
+    name: Setup variables for usage in following steps
+    runs-on: ubuntu-latest
+    outputs:
+      release_ref: ${{ steps.final_vars.outputs.release_ref }}
+      infra_env: ${{ steps.final_vars.outputs.infra_env }}
+      repository_name: ${{ steps.final_vars.outputs.repository_name }}
+    steps:
+      - name: Set "develop" env (us-east-1)
+        if: github.ref_name == 'develop'
+        run: |
+          echo "INFRA_ENV=dev2" >> $GITHUB_ENV
+
+      - name: Set "develop-v1" env (us-east-1)
+        if: github.ref_name == 'develop-v1'
+        run: |
+          echo "INFRA_ENV=dev2-v1" >> $GITHUB_ENV
+
+      - name: Set "preprod" env (ap-southeast-1)
+        if: startsWith(github.ref_name, 'preprod/')
+        run: |
+          echo "INFRA_ENV=preprod" >> $GITHUB_ENV
+
+      - name: Set "release" env (us-east-1)
+        if: startsWith(github.ref_name, 'release/2.')
+        run: |
+          echo "INFRA_ENV=stage" >> $GITHUB_ENV
+
+      - name: Set "release-v1" env (us-east-1)
+        if: startsWith(github.ref_name, 'release/1.')
+        run: |
+          echo "INFRA_ENV=stage-v1" >> $GITHUB_ENV
+
+      - name: Final variables
+        id: final_vars
+        run: |
+          echo "release_ref=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          echo "infra_env=${{ env.INFRA_ENV }}" >> $GITHUB_OUTPUT
+          echo "repository_name=${{ env.REPOSITORY_NAME }}" >> $GITHUB_OUTPUT
+
+  # Update release step is disabled, since it is not required now.
+  # (release versions are not being changed during release process)
+
+  # update_release:
+  #   name: Update release
+  #   uses: renalworksrevo/gh_actions/.github/workflows/java_update_release.yaml@develop
+  #   needs: setup_variables
+  #   with:
+  #     release_ref: ${{ needs.setup_variables.outputs.release_ref }}
+  #     release_type: ${{ needs.setup_variables.outputs.release_type }}
+  #   secrets:
+  #     SERVICE_ACCOUNT_PAT: ${{ secrets.SERVICE_ACCOUNT_PAT }}
+
+  deploy_release:
+    name: Deploy updated release
+    needs: [setup_variables]
+    uses: renalworksrevo/gh_actions/.github/workflows/cloudfront_deploy.yaml@develop
+    with:
+      infra_env: ${{ needs.setup_variables.outputs.infra_env }}
+      release_ref: ${{ needs.setup_variables.outputs.release_ref }}
+      caller_repository_name: ${{ needs.setup_variables.outputs.repository_name }}

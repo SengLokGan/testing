@@ -1,0 +1,33 @@
+{
+  "profile": "Profile",
+  "login": "Login",
+  "gender": "Gender",
+  "responsibilities": "Responsibilities",
+  "name": "Name",
+  "documentType": "NRIC/Passport",
+  "role": "User role",
+  "profRegNumber": "Prof. Reg. Number",
+  "userPhoto": "User photo",
+  "modal": {
+    "name": "Name",
+    "login": "Login",
+    "role": "Role",
+    "responsibilities": "Responsibilities",
+    "profRegNumber": "Prof. Reg. Number",
+    "uploadFiles": "Upload files",
+    "staffUserInfoUpdated": "User info has been updated",
+    "updateFailed": "Update failed. Please, try again",
+    "editUser": "Edit user"
+  },
+  "table": {
+    "name": "NAME",
+    "documentType": "NRIC/Passport",
+    "gender": "GENDER",
+    "role": "User role",
+    "responsibilities": "Responsibilities"
+  },
+  "filter": {
+    "ALL": "All",
+    "enterName": "Enter name"
+  }
+}

@@ -1,0 +1,35 @@
+export declare const getRoutePermissions: () => {
+  showRoute: {
+    todayPatients: boolean;
+    labOrders: boolean;
+    clinicalNotes: boolean;
+    patientsOverview: boolean;
+    schedule: boolean;
+    billing: boolean;
+    reports: boolean;
+    dashboard: boolean;
+    patientProfile: boolean;
+    patientDashboard: boolean;
+    patientClinicalNotes: boolean;
+    patientHdPrescription: boolean;
+    patientLabResults: boolean;
+    patientMedication: boolean;
+    patientVaccination: boolean;
+    accessManagement: boolean;
+    patientSchedule: boolean;
+    patientServicesHistory: boolean;
+    patientInvoices: boolean;
+    patientInsurances: boolean;
+    administration: boolean;
+    userManagement: boolean;
+    dialysisMachines: boolean;
+    staffProfile: boolean;
+    staffManagement: boolean;
+    vascularAccessReport: boolean;
+    patientCensusReport: boolean;
+    mortalityReport: boolean;
+    hospitalizationReport: boolean;
+    injectionReport: boolean;
+    patientStationHistoryReport: boolean;
+  };
+};

@@ -1,0 +1,35 @@
+name: "Build check workflow"
+on:
+  push:
+    branches: ["develop"]
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: ["develop", "release/*", "master"]
+
+jobs:
+  build:
+    name: "Build status check"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Gather dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

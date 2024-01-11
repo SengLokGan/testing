@@ -1,0 +1,17 @@
+name: "Create hotfix"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write 
+
+jobs:
+  create_hotfix:
+    name: Create hotfix from master branch
+    uses: renalworksrevo/gh_actions/.github/workflows/general_create_hotfix.yaml@develop
+    with:
+      language: "TypeScript"
+    secrets:
+      SERVICE_ACCOUNT_PAT: ${{ secrets.SERVICE_ACCOUNT_PAT }}

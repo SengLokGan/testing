@@ -1,0 +1,40 @@
+name: "Generate and commit types"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  generate_types:
+    name: "Generate and commit types"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SERVICE_ACCOUNT_PAT }}
+
+      - name: Gather dependencies
+        run: npm ci
+      
+      - name: Delete existing types to prevent conflicts
+        run: rm -rf types
+        
+      - name: Generate types
+        run: npm run generate:types
+
+      - name: Run format
+        run: npm run format
+
+      - name: Configure git user
+        run: |
+          git config user.name revo-ghservice
+          git config user.email github-actions@github.com
+          git config push.autoSetupRemote true
+
+      - name: Commit updated files
+        run: |
+          git add .
+          git commit -m "Generate types [skip ci]" --no-verify
+          git push

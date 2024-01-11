@@ -1,0 +1,41 @@
+{
+  "clinicalNotes": "clinicalNotes",
+  "clinicalNote": "clinicalNote",
+  "form": {
+    "noteType": "form.noteType",
+    "note": "form.note",
+    "clinicalNoteCreated": "form.clinicalNoteCreated",
+    "clinicalNoteUpdated": "form.clinicalNoteUpdated",
+    "clinicalNoteDeleted": "form.clinicalNoteDeleted",
+    "areYouSureDelete": "form.areYouSureDelete"
+  },
+  "filters": {
+    "fromDate": "filters.fromDate",
+    "toDate": "filters.toDate",
+    "clearAll": "filters.clearAll",
+    "noteTypes": {
+      "NURSE_NOTE": "filters.noteTypes.NURSE_NOTE",
+      "DOCTOR_NOTE": "filters.noteTypes.DOCTOR_NOTE",
+      "VACCINATION": "filters.noteTypes.VACCINATION",
+      "MEDICATION": "filters.noteTypes.MEDICATION",
+      "HD": "filters.noteTypes.HD",
+      "ISSUE": "filters.noteTypes.ISSUE",
+      "NEPHROLOGIST_REVIEW": "filters.noteTypes.NEPHROLOGIST_REVIEW",
+      "PIC_REVIEW": "filters.noteTypes.PIC_REVIEW",
+      "MY_NOTES": "filters.noteTypes.MY_NOTES"
+    }
+  },
+  "tableView": {
+    "note": "tableView.note",
+    "entered": "tableView.entered",
+    "type": "tableView.type",
+    "details": "tableView.details",
+    "enteredBy": "tableView.enteredBy"
+  },
+  "cardView": {
+    "created": "cardView.created",
+    "edited": "cardView.edited",
+    "deleteNote": "cardView.deleteNote",
+    "editNote": "cardView.editNote"
+  }
+}

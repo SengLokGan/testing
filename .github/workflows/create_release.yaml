@@ -1,0 +1,51 @@
+name: "Create release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Which release type to create"
+        required: true
+        default: stage
+        type: choice
+        options:
+          - stage
+          - preprod
+          - stage-v1
+
+env:
+  REPOSITORY_NAME: "revo-frontend"
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  setup_outputs:
+    name: Convert env variable to output for usage in the following steps
+    runs-on: ubuntu-latest
+    outputs:
+      repository_name: ${{ steps.final_vars.outputs.repository_name }}
+    steps:
+      - name: Final variables
+        id: final_vars
+        run: |
+          echo "repository_name=${{ env.REPOSITORY_NAME }}" >> $GITHUB_OUTPUT
+
+  create_release:
+    name: Create new release
+    uses: renalworksrevo/gh_actions/.github/workflows/general_create_release.yaml@develop
+    with:
+      language: "TypeScript"
+      release_type: ${{ inputs.release_type }}
+    secrets:
+      SERVICE_ACCOUNT_PAT: ${{ secrets.SERVICE_ACCOUNT_PAT }}
+
+  deploy_release:
+    name: Deploy created release
+    needs: [setup_outputs, create_release]
+    uses: renalworksrevo/gh_actions/.github/workflows/cloudfront_deploy.yaml@develop
+    with:
+      infra_env: ${{ inputs.release_type }}
+      release_ref: ${{ needs.create_release.outputs.release_ref }}
+      caller_repository_name: ${{ needs.setup_outputs.outputs.repository_name }}

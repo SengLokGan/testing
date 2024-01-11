@@ -1,0 +1,20 @@
+{
+  "administration": "administration",
+  "selectPage": "selectPage",
+  "staffManagement": "staffManagement",
+  "dialysisMachinesManagement": "dialysisMachinesManagement",
+  "billing": "billing",
+  "usersManagement": "usersManagement",
+  "bays": "bays",
+  "dialysisMachines": "dialysisMachines",
+  "dialysisMachinesList": "dialysisMachinesList",
+  "insurancesProviders": "insurancesProviders",
+  "priceList": "priceList",
+  "listOfTenantUsers": "listOfTenantUsers",
+  "clinicalStaffList": "clinicalStaffList",
+  "baysAndTheirHDMachines": "baysAndTheirHDMachines",
+  "hDMachinesList": "hdMachinesList",
+  "providersList": "providersList",
+  "servicesAndConsumables": "servicesAndConsumables",
+  "staffList": "Staff list"
+}

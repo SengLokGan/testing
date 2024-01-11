@@ -1,0 +1,16 @@
+export const latinLettersNumbersCharactersReg = /^[A-Za-zА0-9\s!№$*?()\[\]{}'";:\\/<>,._-]+$/;
+export const latinLettersNumbersCharactersWithoutSpacesReg = /^[A-Za-zА0-9!№$*?()\[\]{}'";:\\/<>,._-]+$/;
+export const latinLettersNumbersSpecialCharactersReg = /^[A-Za-zА0-9\s'.-_]+$/;
+export const latinLettersNumbersSpecialCharactersCommaReg = /^[A-Za-zА0-9\s'.,-_]+$/;
+export const latinLettersNumbersAllSpecialCharactersReg = /[A-Za-zА0-9№!$?*()[\]{}'";:\\\/<>,._\-]+$|^[\w\s]+$|^$/;
+export const latinLettersNumbersSpecialSymbolsReg = /^[A-Za-zА0-9\s-"',№]+$/;
+export const latinLettersSpecialCharactersReg = /^[A-Za-zА\s-']+$/;
+export const latinLettersSpecialSymbolsReg = /^[A-Za-zА\s-.,'\/]+$/;
+export const latinLettersNumeralsReg = /^[A-Za-z0-9]+$/;
+export const numbersReg = /^[0-9]+$/;
+export const positiveNegativeNumbersReg = /^-?\d*$/;
+export const positiveNegativeNumbersFloatReg = /^-?\d*(\.\d*)?$/;
+export const numbersDecimalsReg = /^\d+(\.\d+|,\d+)?$/;
+export const numbersRequiredDecimalsReg = /^\d+(\.\d{1,2})$/;
+export const numbersSpecialCharactersReg = /^[А0-9\s'.-]+$/;
+export const latinLetters = /^[A-Za-z]+$/;

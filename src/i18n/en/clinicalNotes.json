@@ -1,0 +1,41 @@
+{
+  "clinicalNotes": "Clinical notes",
+  "clinicalNote": "Clinical note",
+  "form": {
+    "noteType": "Note type",
+    "note": "Note",
+    "clinicalNoteCreated": "Clinical note has been created",
+    "clinicalNoteUpdated": "Clinical note has been changed",
+    "clinicalNoteDeleted": "Clinical note has been deleted",
+    "areYouSureDelete": "Are you sure you want to delete that clinical note?"
+  },
+  "filters": {
+    "fromDate": "From date",
+    "toDate": "To date",
+    "clearAll": "Clear all",
+    "noteTypes": {
+      "NURSE_NOTE": "Nurse's",
+      "DOCTOR_NOTE": "Doctor’s",
+      "VACCINATION": "Vaccination",
+      "MEDICATION": "Medications",
+      "HD": "HD",
+      "ISSUE": "Issues",
+      "NEPHROLOGIST_REVIEW": "Nephrologist reviews",
+      "PIC_REVIEW": "PIC reviews",
+      "MY_NOTES": "My notes"
+    }
+  },
+  "tableView": {
+    "note": "Note",
+    "entered": "Entered",
+    "type": "Type",
+    "details": "Details",
+    "enteredBy": "Entered by"
+  },
+  "cardView": {
+    "created": "Created",
+    "edited": "Edited",
+    "deleteNote": "Delete note",
+    "editNote": "Edit note"
+  }
+}

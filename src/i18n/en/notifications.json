@@ -1,0 +1,26 @@
+{
+  "title": "Notifications",
+  "minutesAgo": "{{minutes}} minutes ago",
+  "hoursAgo": "{{hours}} hour(s) ago",
+  "daysAgo": "{{days}} day ago",
+  "notification": {
+    "READY_LAB_ANALYSIS": "Lab tests {{labOrderNumber}} for {{samplingDate}} for <0>{{name}}</0> is ready",
+    "LAB_ANALYSIS_CHANGES": "Lab tests {{labOrderNumber}} for {{samplingDate}} for <0>{{name}}</0> was changed",
+    "NURSE_ACTIONS": "{{action}} was / was not performed to <0>{{name}}</0>",
+    "LAB_RESULTS_DEVIATION": "Lab tests for <0>{{name}}</0> are out of the normal range",
+    "PATIENT_MEDICATION_LIST_CHANGES": "Medication for <0>{{name}}</0> was changed",
+    "PATIENT_DIALYSIS_PRESCRIPTION_CHANGES": "HD prescription for <0>{{name}}</0> was changed",
+    "PATIENT_PROCEDURE_ISSUES": "<0>{{name}}</0> has persistent problems",
+    "GUARANTEE_LETTER_EXPIRATION": "<0>{{name}}'s</0> guarantee letter is expiring",
+    "DIALYSIS_PROCEDURE_IMMINENT_END": "<0>{{name}}'s</0> HD procedure is running to an end",
+    "DOCTOR_VISITS": "Dr 0>{{name}}</0> in the clinic today {{timeRange}}",
+    "SMALL_AMOUNT_OF_REMAINING_MEDICATIONS": "Maintenance service necessity",
+    "PERFORM_WATER_TEST_NECESSITY": "Water test performing necessity",
+    "CALENDAR_CUSTOM_EVENT_CREATED": "The custom event {{title}} has been created on {{date}}",
+    "CALENDAR_CUSTOM_EVENT_UPDATED": "The custom event {{title}} has been created on {{date}}",
+    "CALENDAR_CUSTOM_EVENT_DELETED": "The custom event {{title}} has been deleted.",
+    "CALENDAR_BT_EVENT_CREATED": "Quarterly BT has been created on {{date}}",
+    "CALENDAR_BT_EVENT_UPDATED": "Quarterly BT has been created on {{date}}",
+    "CALENDAR_BT_EVENT_DELETED": "The Quarterly BT {{date}} has been deleted."
+  }
+}

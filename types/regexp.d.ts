@@ -1,0 +1,16 @@
+export declare const latinLettersNumbersCharactersReg: RegExp;
+export declare const latinLettersNumbersCharactersWithoutSpacesReg: RegExp;
+export declare const latinLettersNumbersSpecialCharactersReg: RegExp;
+export declare const latinLettersNumbersSpecialCharactersCommaReg: RegExp;
+export declare const latinLettersNumbersAllSpecialCharactersReg: RegExp;
+export declare const latinLettersNumbersSpecialSymbolsReg: RegExp;
+export declare const latinLettersSpecialCharactersReg: RegExp;
+export declare const latinLettersSpecialSymbolsReg: RegExp;
+export declare const latinLettersNumeralsReg: RegExp;
+export declare const numbersReg: RegExp;
+export declare const positiveNegativeNumbersReg: RegExp;
+export declare const positiveNegativeNumbersFloatReg: RegExp;
+export declare const numbersDecimalsReg: RegExp;
+export declare const numbersRequiredDecimalsReg: RegExp;
+export declare const numbersSpecialCharactersReg: RegExp;
+export declare const latinLetters: RegExp;
